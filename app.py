@@ -13,7 +13,7 @@ app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "******************"
+app.config["MYSQL_PASSWORD"] = "sql_password"
 app.config["MYSQL_DB"] = "secure_web"
 
 mysql.init_app(app)
