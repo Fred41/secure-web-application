@@ -25,6 +25,21 @@ A secure web application developed using **Python Flask** and **MySQL** that pro
 - Secure Session Management
 - Duplicate Email Validation
 - Strong Password Policy
+- 
+ Database Configuration
+
+For security reasons, the actual MySQL password is **not included** in this repository.
+
+Before running the application, update the database configuration in `app.py`  with your own MySQL credentials.
+
+Example:
+
+```python
+app.config["MYSQL_HOST"] = "localhost"
+app.config["MYSQL_USER"] = "root"
+app.config["MYSQL_PASSWORD"] = "YOUR_MYSQL_PASSWORD"
+app.config["MYSQL_DB"] = "secure_web"
+```
 
 
  🛠️ Technologies Used
