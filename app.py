@@ -6,30 +6,26 @@ import re
 app = Flask(__name__)
 app.secret_key = "my_secret_key_123"
 
-# Secure Session Settings
+
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
-# MySQL Configuration
+
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "Fredfrango@24122005"
+app.config["MYSQL_PASSWORD"] = "******************"
 app.config["MYSQL_DB"] = "secure_web"
 
 mysql.init_app(app)
 
 
-# ===========================
-# Home Page
-# ===========================
+
 @app.route("/")
 def home():
     return redirect("/login")
 
 
-# ===========================
-# Sign Up
-# ===========================
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
 
@@ -39,14 +35,14 @@ def signup():
         email = request.form["email"].strip()
         password = request.form["password"]
 
-        # Username Validation
+       
         if len(username) < 3:
             return render_template(
                 "signup.html",
                 error="Username must be at least 3 characters."
             )
 
-        # Strong Password Validation
+        
         if len(password) < 8:
             return render_template(
                 "signup.html",
@@ -79,7 +75,7 @@ def signup():
 
         cursor = mysql.connection.cursor()
 
-        # Check if email already exists
+        
         cursor.execute(
             "SELECT id FROM users WHERE email=%s",
             (email,)
@@ -122,9 +118,7 @@ def signup():
     return render_template("signup.html")
 
 
-# ===========================
-# Login
-# ===========================
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
@@ -163,9 +157,7 @@ def login():
     return render_template("login.html")
 
 
-# ===========================
-# Dashboard
-# ===========================
+
 @app.route("/dashboard")
 def dashboard():
 
@@ -178,9 +170,7 @@ def dashboard():
     )
 
 
-# ===========================
-# Logout
-# ===========================
+
 @app.route("/logout")
 def logout():
 
@@ -188,9 +178,5 @@ def logout():
 
     return redirect("/login")
 
-
-# ===========================
-# Run App
-# ===========================
 if __name__ == "__main__":
     app.run(debug=True)
