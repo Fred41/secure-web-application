@@ -1,0 +1,384 @@
+/* ======================================
+   Secure Web Application
+   Author: Fred Frango
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#2563eb,#1e3a8a);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* ==========================
+   Login & Signup Container
+========================== */
+
+.container{
+
+    width:430px;
+    background:#fff;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    animation:fadeIn .6s ease;
+
+}
+
+h2{
+
+    text-align:center;
+    color:#1e3a8a;
+    font-size:30px;
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+    font-size:15px;
+
+}
+
+label{
+
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    color:#444;
+    font-weight:500;
+
+}
+
+input{
+
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+
+}
+
+input:focus{
+
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 8px rgba(37,99,235,.3);
+
+}
+
+/* ==========================
+   Password Box
+========================== */
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box input{
+
+    padding-right:50px;
+
+}
+
+.toggle-password{
+
+    position:absolute;
+    top:50%;
+    right:15px;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:20px;
+    user-select:none;
+    color:#777;
+    transition:.3s;
+
+}
+
+.toggle-password:hover{
+
+    color:#2563eb;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+button{
+
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   Error & Success
+========================== */
+
+.error{
+
+    margin-bottom:15px;
+    background:#ffe5e5;
+    color:#c0392b;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+
+}
+
+.success{
+
+    margin-bottom:15px;
+    background:#d4edda;
+    color:#155724;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+
+}
+
+/* ==========================
+   Links
+========================== */
+
+p{
+
+    text-align:center;
+    margin-top:18px;
+
+}
+
+a{
+
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
+}
+
+.footer{
+
+    margin-top:25px;
+    color:#777;
+    font-size:13px;
+
+}
+
+/* ==========================
+   Animation
+========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}/* ==========================
+   Dashboard
+========================== */
+
+.dashboard{
+
+    width:900px;
+    background:#fff;
+    padding:45px;
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    animation:fadeIn .6s ease;
+
+}
+
+.dashboard h1{
+
+    text-align:center;
+    color:#1e3a8a;
+    font-size:32px;
+    margin-bottom:10px;
+
+}
+
+.dashboard .subtitle{
+
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+    font-size:17px;
+
+}
+
+/* ==========================
+   Dashboard Cards
+========================== */
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+
+}
+
+.card{
+
+    background:#f8fbff;
+    border-left:5px solid #2563eb;
+    border-radius:15px;
+    padding:25px;
+    transition:.3s;
+    cursor:default;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+
+    color:#1e3a8a;
+    margin-bottom:12px;
+    font-size:20px;
+
+}
+
+.card p{
+
+    color:#555;
+    text-align:left;
+    margin:0;
+    line-height:1.6;
+
+}
+
+/* ==========================
+   Logout Button
+========================== */
+
+.logout-btn{
+
+    display:block;
+    width:220px;
+    margin:35px auto 0;
+    padding:14px;
+    background:#dc2626;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    background:#b91c1c;
+    transform:translateY(-2px);
+    text-decoration:none;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:900px){
+
+    .dashboard{
+
+        width:95%;
+        padding:30px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .container{
+
+        width:100%;
+        padding:30px;
+
+    }
+
+    h2{
+
+        font-size:26px;
+
+    }
+
+    .dashboard h1{
+
+        font-size:28px;
+
+    }
+
+    button{
+
+        font-size:15px;
+
+    }
+
+}

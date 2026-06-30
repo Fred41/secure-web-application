@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Web Portal - Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Secure Web Portal</h2>
+
+    <p class="subtitle">
+        Sign in to your account
+    </p>
+
+    {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <form method="POST" action="/login">
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="example@email.com"
+            required>
+
+        <label>Password</label>
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required>
+
+            <span class="toggle-password" onclick="togglePassword()">
+                👁
+            </span>
+
+        </div>
+
+        <button type="submit">
+            Sign In
+        </button>
+
+    </form>
+
+    <p>
+        Don't have an account?
+        <a href="/signup">Register</a>
+    </p>
+
+    <p class="footer">
+        Secure Web Application<br>
+        Cybersecurity Major Project • 2026
+    </p>
+
+</div>
+
+<script>
+function togglePassword() {
+
+    const password = document.getElementById("password");
+
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+
+}
+</script>
+
+</body>
+</html>

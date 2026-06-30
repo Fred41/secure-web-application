@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Web Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>Secure Web Dashboard</h1>
+
+    <p class="subtitle">
+        Welcome back,
+        <strong>{{ username }}</strong>
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🔐 Password Security</h3>
+            <p>
+                Passwords are securely stored using
+                <strong>bcrypt hashing</strong>.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🛡 SQL Injection Protection</h3>
+            <p>
+                Prepared statements are used to protect
+                against SQL Injection attacks.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌐 XSS Protection</h3>
+            <p>
+                User data is rendered safely using
+                Flask's Jinja2 template engine.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔑 Session Status</h3>
+            <p>
+                Your session is currently
+                <strong>Active</strong>.
+            </p>
+        </div>
+
+    </div>
+
+    <a href="/logout" class="logout-btn">
+        Logout
+    </a>
+
+    <p class="footer">
+        Secure Web Application<br>
+        Cybersecurity Major Project • 2026
+    </p>
+
+</div>
+
+</body>
+</html>
